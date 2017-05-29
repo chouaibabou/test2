@@ -1,0 +1,33 @@
+{% block extends %}
+
+    {#{{ "{% extends 'base.html.twig' %}" }}#}
+
+    {{ "{% extends 'admin.html.twig' %}" }}
+
+    {{ "{% form_theme edit_form 'fields.html.twig' %}" }}
+
+
+{% endblock extends %}
+
+{% block body %}
+    {{ "{% block body %}" }}
+    <section class="panel">
+        <h1>{{ entity_singularized|capitalize }} edit</h1>
+        <div class="panel-body">
+            <div class="adv-table editable-table">
+                <div class="clearfix">
+
+                    {{ '{{ form_start(edit_form) }}' }}
+                    {{ '{{ form_widget(edit_form) }}' }}
+                    {#<input type="submit" value="Edit" />#}
+                    {{ '{{ form_end(edit_form) }}' }}
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% set hide_edit, hide_delete, hide_edit_edit = true, false, true %}
+    {{ include('crud/views/others/record_actions.html.twig.twig') -}}
+    {{ "{% endblock %}" }}
+{% endblock body %}

@@ -1,0 +1,41 @@
+    {% extends 'admin.html.twig' %}
+
+{% block body %}
+<section class="panel">
+    <h1>Test4</h1>
+    <div class="panel-body">
+        <div class="adv-table editable-table">
+            <div class="clearfix">
+                <table class="display table table-striped table-hover table-bordered">
+                    <tbody>
+                        <tr>
+                            <th>Id</th>
+                            <td>{{ test4.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Nom</th>
+                            <td>{{ test4.nom }}</td>
+                        </tr>
+                    </tbody>
+                 </table>
+            </div>
+        </div>
+    </div>
+</section>
+    <ul>
+        <li>
+                        <a  href="{{ path('test4_index') }}" class="btn btn-shadow btn-default "><i class="fa fa-arrow-left"></i> Back to the list</a>
+
+        </li>
+        <li>
+                        <a  href="{{ path('test4_edit', { 'id': test4.id }) }}" class="btn btn-warning pull-right"><i class="icon-fixed-width icon-book"></i> Edit</a>
+
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                                <button type="submit" class="btn btn-danger pull-right"><i class="icon-trash icon-large"></i> Delete </button>
+
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

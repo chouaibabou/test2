@@ -1,0 +1,5 @@
+crud:
+    resource: "@CrudBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

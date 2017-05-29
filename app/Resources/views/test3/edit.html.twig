@@ -1,0 +1,22 @@
+{#{% extends 'base.html.twig' %}#}
+{% extends 'admin.html.twig' %}
+{% form_theme edit_form 'fields.html.twig' %}
+
+{% block body %}
+    <h1>Post edit</h1>
+
+    {{ form_start(edit_form) }}
+    {{ form_widget(edit_form) }}
+    <button type="submit" class="btn btn-warning pull-right"><i class="icon-fixed-width icon-book"></i> Edit </button>
+    {{ form_end(edit_form) }}
+
+
+
+            <a  href="{{ path('test3_index') }}" class="btn btn-shadow btn-default "><i class="fa fa-arrow-left"></i> Back to the list</a>
+
+            {{ form_start(delete_form) }}
+            <button type="submit" class="btn btn-danger pull-right"><i class="icon-trash icon-large"></i> Delete </button>
+            {{ form_end(delete_form) }}
+
+{% endblock %}
+
